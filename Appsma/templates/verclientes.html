@@ -1,0 +1,58 @@
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+clientes
+
+{%  endblock   %} 
+
+
+{%  block tablamain %}
+    <button> 
+
+        <a href= "{% url 'Nuevos Clientes'  %}"> Registrar Cliente </a>
+
+
+    </button>
+   <p>
+        {% for clientes in clientes_all %}
+
+        <table>
+
+        Nombre: {{clientes.nombre}}
+        Apellido: {{clientes.apellido}}       
+        Telefono: {{clientes.telefono}}        
+        Mail: {{clientes.email}}>
+
+        <button> 
+
+            <a href= "{% url 'eliminarcliente' clientes.nombre%}"> Eliminar </a>
+        
+        
+        </button>
+        --
+        <button> 
+
+            <a href= "{% url 'editarcliente' clientes.nombre%}"> Editar </a>
+        
+        
+        </button>
+
+
+        </table>
+
+
+        {% endfor %}
+    </p>
+{% endblock %}
+
+
+{% block fancy %} 
+                             
+<img class="card-img-top" src="https://i.postimg.cc/Z5d8nbDw/Sprinter.jpg" alt="..." />
+
+{% endblock %}
+

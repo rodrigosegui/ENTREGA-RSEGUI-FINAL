@@ -1,0 +1,35 @@
+
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Tu busqueda
+
+{%  endblock   %} 
+
+{%  block tablamain %}
+
+<p><h2>Hemos buscado los alojamientos con capacidad para {{info1}} huespedes</p></h2>
+    
+    
+
+<ul>
+{% for alojamientos in info2 %}
+
+<li>Nombre: {{alojamientos.nombreA}}    Capacidad:{{alojamientos.capacidad}}  Precio x dia: ${{alojamientos.precioxdia}}</li>
+    
+
+
+
+
+{% endfor%}
+
+
+
+
+</ul>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Lista de Alojamientos
+
+{%  endblock   %} 
+
+
+
+{%  block tablamain %}
+    <button> 
+
+        <a href= "{% url 'Nuevos'  %}"> Crear alojamiento </a>
+
+
+    </button>
+    <button> 
+
+        <a href= "{% url 'Busca tu alojamiento'  %}"> Buscar </a>
+        
+        
+        </button>
+    
+    
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th scope="col">Nombre: {{alojamientos.nombreA}}</th>
+                <th scope="col">Capacidad: {{alojamientos.capacidad}}</th>
+                <th scope="col">Habitaciones: {{alojamientos.habitaciones}}</th>
+                <th scope="col">Precio: ${{alojamientos.precioxdia}}</th>
+
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            {% for alojamientos in alojamientos_list %}
+
+            <tr>
+                <th scope="row">{{alojamientos.nombreA}}</th>
+                <td>{{alojamientos.capacidad}}</td>
+                <td>{{alojamientos.habitaciones}}</td>
+                <td>{{alojamientos.precioxdia}}</td>
+                <td>
+                    <button>
+                        <a href= "{% url 'Alojamientoelegido' alojamientos.id%}"> Ver </a>
+                    </button>
+                    <button>
+                        <a href= "{% url 'editaralojamiento' alojamientos.nombreA%}"> Editar </a>
+                    </button>
+                    <button>
+                        <a href="{% url 'eliminaralojamiento' alojamientos.nombreA%}"> Eliminar </a>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+
+
+
+
+
+
+
+
+        </tbody>
+        
+    
+    
+    
+    </table>
+   
+
+    
+
+{% endblock %}

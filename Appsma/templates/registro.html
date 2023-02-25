@@ -1,0 +1,42 @@
+{% extends "padre.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Registro
+
+{%  endblock   %} 
+
+{%  block fotomain   %}    
+
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+{% endblock %}
+
+{%  block precio %}
+
+{% endblock %}
+
+{% block descripcionmain %} 
+                             
+<form action="" method="POST"> {% csrf_token %}
+
+    {{formulario.as_p}}
+
+    <button type="submit">Registrarse</button>
+
+
+
+</form>                  
+
+{% endblock %}
+
+{% block fancy %} 
+                             
+
+
+{% endblock %}

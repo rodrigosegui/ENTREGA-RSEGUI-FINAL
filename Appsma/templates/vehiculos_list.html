@@ -1,0 +1,82 @@
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Lista de Vehiculos
+
+{%  endblock   %} 
+
+
+
+{%  block tablamain %}
+    <button> 
+
+        <a href= "{% url 'Nuevos Vehiculos'  %}"> Crear vehiculo </a>
+
+
+    </button>
+    <button> 
+
+        <a href= "{% url 'Busca tu Vehiculo'  %}"> Buscar </a>
+        
+        
+        </button>
+    
+    
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th scope="col">Nombre: {{vehiculos.nombreV}}</th>
+                <th scope="col">Capacidad: {{vehiculos.asientos}}</th>
+                <th scope="col">Precio: ${{vehiculos.preciodiario}}</th>
+
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            {% for vehiculos in vehiculos_list %}
+
+            <tr>
+                <th scope="row">{{vehiculos.nombreV}}</th>
+                <td>{{vehiculos.asientos}}</td>
+                
+                <td>{{vehiculos.preciodiario}}</td>
+                <td>
+                    <button>
+                        <a href= "{% url 'Vehiculoelegido' vehiculos.id %}"> Ver </a>
+                    </button>
+                    <button>
+                        <a href= "{% url 'editarvehiculo' vehiculos.nombreV %}"> Editar </a>
+                    </button>
+                    <button>
+                        <a href="{% url 'eliminarvehiculo' vehiculos.nombreV %}"> Eliminar </a>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+
+
+
+
+
+
+
+
+        </tbody>
+        
+    
+    
+    
+    </table>
+   
+
+    
+
+{% endblock %}

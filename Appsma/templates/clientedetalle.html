@@ -1,0 +1,55 @@
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+cliente seleccionado
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+
+{%  block tablamain %}
+    <button> 
+
+    <a href= "{% url 'Nuevos Clientes'  %}"> Crear cliente </a>
+    
+    </button>
+ 
+    <p> Nombre: <i>{{clientes.nombre}}</i></p>
+    <p> Capacidad: <i>{{clientes.apellido}}</i></p>
+    <p>Habitaciones: {{clientes.email}}</i></p>
+    <p>Precio: ${{clientes.telefono}}</i></p>
+    
+    <button> 
+
+        <a href= "{% url 'Clientes' %}"> Regresar </a>
+    
+    
+    </button>
+    
+    
+    </table>
+
+    
+
+  
+
+{% endblock %}
+
+
+
+{%  endblock   %} 
+
+
+{%  block fotomain   %}    
+
+{%  endblock   %} 
+
+{% block fancy %} 
+                             
+<img class="card-img-top" src="https://i.postimg.cc/wBhmh011/alpina1.jpg" alt="..." />
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Alojamientos seleccionado
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+
+{%  block tablamain %}
+    <button> 
+
+    <a href= "{% url 'Nuevos'  %}"> Crear alojamiento </a>
+    
+    </button>
+ 
+    <p> Nombre: <i>{{alojamientos.nombreA}}</i></p>
+    <p> Capacidad: <i>{{alojamientos.capacidad}}</i></p>
+    <p>Habitaciones: {{alojamientos.habitaciones}}</i></p>
+    <p>Precio: ${{alojamientos.precioxdia}}</i></p>
+    
+    <button> 
+
+        <a href= "{% url 'Alojamientos' %}"> Regresar </a>
+    
+    
+    </button>
+    
+    
+    </table>
+
+    
+
+  
+
+{% endblock %}
+
+
+
+{%  endblock   %} 
+
+
+{%  block fotomain   %}    
+
+{%  endblock   %} 
+
+{% block fancy %} 
+                             
+<img class="card-img-top" src="https://i.postimg.cc/wBhmh011/alpina1.jpg" alt="..." />
+
+{% endblock %}

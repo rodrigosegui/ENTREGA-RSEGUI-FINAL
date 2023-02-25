@@ -1,0 +1,80 @@
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Lista de Clientes
+
+{%  endblock   %} 
+
+
+
+{%  block tablamain %}
+    <button> 
+
+        <a href= "{% url 'Nuevos Clientes'  %}"> Nuevo Cliente </a>
+
+
+    </button>
+    <button> 
+
+        <a href= "{% url 'Buscar Clientes'  %}"> Buscar </a>
+        
+        
+        </button>
+    
+    
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th scope="col">Nombre: {{clientes.nombre}}</th>
+                <th scope="col">Capacidad: {{clientes.apellido}}</th>
+                <th scope="col">Mail: ${{clientes.email}}</th>
+                <th scope="col">Telefono: ${{clientes.telefono}}</th>
+
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            {% for clientes in clientes_list %}
+
+            <tr>
+                <th scope="row">{{clientes.nombre}}</th>
+                <td>{{clientes.apellido}}</td>
+                <td>{{clientes.email}}</td>
+                <td>{{clientes.telefono}}</td>
+                
+                <td>
+                    <button>
+                        <a href= "{% url 'Clienteelegido' clientes.id %}"> Ver </a>
+                    </button>
+                    <button>
+                        <a href= "{% url 'editarcliente' clientes.id %}"> Editar </a>
+                    </button>
+                    <button>
+                        <a href="{% url 'eliminarcliente' clientes.id %}"> Eliminar </a>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+
+
+
+
+        </tbody>
+        
+    
+    
+    
+    </table>
+   
+
+    
+
+{% endblock %}

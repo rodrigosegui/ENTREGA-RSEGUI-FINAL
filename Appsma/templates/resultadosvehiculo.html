@@ -1,0 +1,34 @@
+
+{% extends "padre.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Tu busqueda
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+
+<p>Hemos buscado los vehiculos con capacidad para : {{info1}}</p>
+    
+    
+
+<ul>
+{% for vehiculos in info2 %}
+
+
+<li>Nombre: {{vehiculos.nombreV}}</li> 
+<li>Capacidad:{{vehiculos.asientos}}</li>
+  
+{% endfor%}
+
+
+
+
+</ul>
+
+{% endblock %}
+

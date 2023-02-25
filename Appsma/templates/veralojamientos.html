@@ -1,0 +1,66 @@
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Alojamientos
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+
+{%  block tablamain %}
+    <button> 
+
+    <a href= "{% url 'Nuevos'  %}"> Crear alojamiento </a>
+
+
+    </button>
+
+    <p>
+    {% for alojamientos in alojamientos_all %}
+
+    <table>
+    Nombre: {{alojamientos.nombreA}}
+    Capacidad: {{alojamientos.capacidad}}
+    Habitaciones: {{alojamientos.habitaciones}}
+    Precio: ${{alojamientos.precioxdia}}
+    
+    <button> 
+
+        <a href= "{% url 'eliminaralojamiento' alojamientos.nombreA%}"> Eliminar </a>
+    
+    
+    </button>
+    --
+    <button> 
+
+        <a href= "{% url 'editaralojamiento' alojamientos.nombreA%}"> Editar </a>
+    
+    
+    </button>
+    
+    </table>
+</p>
+    
+
+    {% endfor %}
+
+{% endblock %}
+
+
+
+{%  endblock   %} 
+
+
+{%  block fotomain   %}    
+
+{%  endblock   %} 
+
+{% block fancy %} 
+                             
+<img class="card-img-top" src="https://i.postimg.cc/wBhmh011/alpina1.jpg" alt="..." />
+
+{% endblock %}

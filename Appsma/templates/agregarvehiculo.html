@@ -1,0 +1,31 @@
+{% extends "padre.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Registrar nuevos Vehiculos
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+
+<form action="" method="POST"> {% csrf_token %}
+        
+
+    <table>
+
+        {{miFormulario.as_table}}
+
+    </table>
+    
+    <input type="submit" value="Confirmar">
+</form>
+
+{% endblock %}
+
+{% block descripcionmain %} 
+                             
+     Registra el nuevo vehiculo
+{% endblock %}

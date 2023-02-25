@@ -1,0 +1,37 @@
+{% extends "padre.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Aqui se edita al usuario {{usuario}}
+
+{%  endblock   %} 
+
+
+{%  block tablamain %}
+   
+{% endblock %}
+
+{% block descripcionmain %} 
+
+                             
+<form action="" method="POST"> {% csrf_token %}
+
+    {{formulario.as_p}}
+
+    <button type="submit">Iniciar sesión</button>
+
+
+
+</form>                  
+
+{% endblock %}
+
+
+{% block fancy %} 
+                             
+
+
+{% endblock %}

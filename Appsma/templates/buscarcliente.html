@@ -1,0 +1,28 @@
+{% extends "padre.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Encontra el cliente que buscas
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+
+<form action="/Appsma/resultadoscliente" method="GET"> 
+        
+
+    <input type="text" name="nombre">
+    
+    <input type="submit" value="Buscar">
+</form>
+
+{% endblock %}
+
+{% block descripcionmain %} 
+                             
+     Ingresa el nombre del cliente a buscar:                        
+
+{% endblock %}

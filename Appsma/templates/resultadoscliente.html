@@ -1,0 +1,35 @@
+{% extends "padre.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Tu busqueda
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+
+<p>Hemos buscado los clientes con nombre : {{info1}}</p>
+    
+    
+
+<ul>
+{% for clientes in info2 %}
+
+<table>
+<li>Nombre: {{clientes.nombre}}</li> 
+<li>Apellido: {{clientes.apellido}}</li> 
+<li>Telefono:{{clientes.telefono}}</li>
+<li>Mail:{{clientes.mail}}</li>  
+</table>
+{% endfor%}
+
+
+
+
+</ul>
+
+{% endblock %}
+

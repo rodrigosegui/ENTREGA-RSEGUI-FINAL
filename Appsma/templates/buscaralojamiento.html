@@ -1,0 +1,28 @@
+{% extends "padre.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Encontra tu mejor lugar
+
+{%  endblock   %} 
+
+{% block descripcionmain %} 
+                             
+     Ingresa la cantidad de huespedes que debemos alojar                        
+
+{% endblock %}
+
+{%  block vehiculo1 %}
+<h1>Ingresa la cantidad de huespedes:</h1>
+<form action="/Appsma/resultadosalojamiento/" method="GET">         
+
+    <input type="number" name="capacidad" >
+    
+    <input type="submit" value="Buscar">
+</form>
+
+{% endblock %}
+

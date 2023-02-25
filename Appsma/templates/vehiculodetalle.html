@@ -1,0 +1,54 @@
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Vehiculo seleccionado
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+
+{%  block tablamain %}
+    <button> 
+
+    <a href= "{% url 'Nuevos Vehiculos'  %}"> Cargar nuevo </a>
+    
+    </button>
+ 
+    <p> Nombre: <i>{{vehiculos.nombreV}}</i></p>
+    <p> asientos: <i>{{vehiculos.asientos}}</i></p>
+    <p>Precio: ${{vehiculos.preciodiario}}</i></p>
+    
+    <button> 
+
+        <a href= "{% url 'Vehiculos' %}"> Regresar </a>
+    
+    
+    </button>
+    
+    
+    </table>
+
+    
+
+  
+
+{% endblock %}
+
+
+
+{%  endblock   %} 
+
+
+{%  block fotomain   %}    
+
+{%  endblock   %} 
+
+{% block fancy %} 
+                             
+<img class="card-img-top" src="https://i.postimg.cc/wBhmh011/alpina1.jpg" alt="..." />
+
+{% endblock %}

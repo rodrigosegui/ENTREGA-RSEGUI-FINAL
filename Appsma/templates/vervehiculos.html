@@ -1,0 +1,71 @@
+{% extends "padretabla.html" %}
+
+
+{% load static %}
+
+{%  block tittle   %} 
+
+Flota de Vehiculos
+
+{%  endblock   %} 
+
+{%  block vehiculo1 %}
+
+{%  block tablamain %}
+    <button> 
+
+    <a href= "{% url 'Nuevos Vehiculos'  %}"> Crear Vehiculo </a>
+
+
+    </button>
+    <button> 
+
+    <a href= "{% url 'Busca tu Vehiculo'  %}"> Buscar </a>
+    
+    
+    </button>
+
+    {% for vehiculos in vehiculos_all %}
+
+    <p>
+    <table>
+
+    Nombre: {{vehiculos.nombreV}}  ------------
+    Capacidad: {{vehiculos.asientos}} ------------
+    Precio: {{vehiculos.preciodiario}}
+    <button> 
+
+        <a href= "{% url 'eliminarvehiculo' vehiculos.nombreV%}"> Eliminar </a>
+    
+    
+    </button>
+    <button> 
+
+        <a href= "{% url 'editarvehiculo' vehiculos.nombreV%}"> Editar </a>
+    
+    
+    </button>
+    </table>
+    </p>
+
+
+    
+
+    {% endfor %}
+
+{% endblock %}
+
+
+
+{%  endblock   %} 
+
+
+{%  block fotomain   %}    
+
+{%  endblock   %} 
+
+{% block fancy %} 
+                             
+<img class="card-img-top" src="https://i.postimg.cc/wBhmh011/alpina1.jpg" alt="..." />
+
+{% endblock %}
