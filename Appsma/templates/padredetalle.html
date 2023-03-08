@@ -47,25 +47,14 @@
                         </li>
                     </ul>
                     <form class="d-flex">
-                        {% if not request.user.is_authenticated %}
                         <button class="btn btn-outline-dark" type="submit">
                             <li><a href="{% url 'Registrarse'  %}">Registrate</a></li>
                         </button>
-                        {% endif %}
-                        {% if request.user.is_authenticated %}
-                            
-                            <p class="text-muted small mb-4 mb-lg-0">Hola, {{user.username}}!!</p>
 
-                            {% with user.avatar_set.first as miAvatar   %}
 
-                            {% if miAvatar %}
-
-                            <img src="{{miAvatar.imagen.url}}" alt="Sin imagen" style="max-width:100px ;">
-                            {% endif %}
-                            {% endwith %}
-                        
-                        {% endif %}
                         {% if not request.user.is_authenticated %}
+
+
                         <button class="btn btn-outline-dark" type="submit">
                             
                             <li><a href="{% url 'Login'  %}">Iniciar sesión</a></li>
@@ -73,7 +62,7 @@
                         </button>
                         {% endif %}
 
-
+                        
                         {% if request.user.is_authenticated %}
                         <button class="btn btn-outline-dark" type="submit">
                             
@@ -86,60 +75,26 @@
                             
                         </button>
                         {% endif %}
-                        
                     </form>
                 </div>
             </div>
         </nav>
         <!-- Product section-->
-        {% block productomain %}
-        <section class="py-5">
+        
+        <section class="py-4">
             <div class="container px-4 px-lg-5 my-5">
 
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6">
-                        {%  block fotomain   %}    
-                        
-                        
+                    <div class="col-md-12">
+                        {% block tablamain %}
+
+
                         {%  endblock   %} 
-    
-                        
-                    <div class="col-md-6">
-                        
-                        <h1 class="display-5 fw-bolder">
-                            
-                            {%  block vehiculo1 %}
-
-
-                            {% endblock %}
-                        </h1>
-                        <div class="fs-5 mb-5">
-
-                            {%  block precio %}
-                            
-
-                            {% endblock %}
-
-                            
-                        </div>
-                        <p class="lead">
-                             {% block descripcionmain %} 
-                             
-                             
-
-                             {% endblock %}
-
-
-
-
-                        </p>
-
-                        
                     </div>
                 </div>
             </div>
         </section>
-        {%  endblock   %} 
+     
         <!-- Related items section-->
         {% block related%}
         <section class="py-5 bg-light">
@@ -149,19 +104,24 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            {% block fancy %} 
+                            {% block fancyfoto %} 
                              
                             <img class="card-img-top" src="https://i.postimg.cc/Y0PF2ZNc/G63.jpg" alt="..." />
 
-                             {% endblock %}
+                            {% endblock %}
+                            
                             
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
+                                    {% block fancynombre %}
                                     <h5 class="fw-bolder">Fancy Product</h5>
+                                    {% endblock %}
                                     <!-- Product price-->
+                                    {% block fancyprecio %}
                                     $40.00 - $80.00
+                                    {% endblock %}
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -173,14 +133,20 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
+                            {% block oppetiqueta %}
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            {% endblock %}
                             <!-- Product image-->
+                            {% block oppfoto %} 
                             <img class="card-img-top" src="https://i.postimg.cc/Y0PF2ZNc/G63.jpg" alt="..." />
+                            {% endblock %}
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
+                                    {% block oppnombre %}
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Oportunidad</h5>
+                                    {% endblock %}
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>

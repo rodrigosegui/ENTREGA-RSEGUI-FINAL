@@ -5,45 +5,28 @@
 
 {%  block tittle   %} 
 
-Cabañas smaa-Python
-{{mensaje}}
+Agregar Avatar
 
 {%  endblock   %} 
 
-{%  block fotomain   %}    
-<img class="card-img-top mb-5 mb-md-0" src="https://i.postimg.cc/G2cGXk3f/E350.jpg" alt="..." /></div>
-
- {%  endblock   %} 
-
 {%  block vehiculo1 %}
-Hola
-{%  block precio %}
 
+    <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        
 
-{% endblock %}
+    
+
+        {{form.as_p}}
+
+    
+    
+        <button type="submit"> Confirmar</button>
+    </form>
 
 {% endblock %}
 
 {% block descripcionmain %} 
                              
- <form action="" method="POST" > {%csrf_token%}
-    <table>
-
-        {{form.as_table}}
-
-
-
-    </table>
-
-    <input type="submit", value="Subir imagen", style="color:red">
-
-
- </form>                  
-
-{% endblock %}
-
-{% block fancy %} 
-                             
-<img class="card-img-top" src="https://i.postimg.cc/wBhmh011/alpina1.jpg" alt="..." />
+     Registra el nuevo cliente                        
 
 {% endblock %}

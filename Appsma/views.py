@@ -25,8 +25,8 @@ def agregarImagen(request):
         
 
         if miFormulario.is_valid():
-            informacion = miFormulario.cleaned_data
-            avatar = Avatar(user=request.user, imagen=informacion['imagen'])
+            usuarioActual = User.objects.get(username=request.user)
+            avatar = Avatar(usuario=usuarioActual, imagen=miFormulario.cleaned_data['imagen'])
             avatar.save()
             return render(request, "inicio.html")
         
